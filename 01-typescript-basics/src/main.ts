@@ -1,5 +1,5 @@
 import './style.css'
-import './topics/01-basics-types.ts'
+import './topics/02-object-interfaces.ts'
 import { setupCounter } from './counter.ts'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
