@@ -1,5 +1,5 @@
 import './style.css'
-import './topics/03-functions.ts'
+import './topics/04-exercise-types.ts'
 import { setupCounter } from './counter.ts'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
