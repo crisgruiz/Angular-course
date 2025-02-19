@@ -1,5 +1,5 @@
 import './style.css'
-import './topics/06-function-destructuring.ts'
+import './topics/08-classes.ts'
 import { setupCounter } from './counter.ts'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
