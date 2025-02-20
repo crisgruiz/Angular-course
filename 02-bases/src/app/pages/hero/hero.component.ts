@@ -1,32 +1,34 @@
-import { Component } from '@angular/core';
+import { UpperCasePipe } from '@angular/common';
+import { Component, computed, signal } from '@angular/core';
 
 @Component({
-  selector: 'app-heroes-hero',
-  standalone: false,
+  selector: 'app-hero',
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.css',
+  imports: [UpperCasePipe],
 })
 export class HeroComponent {
-  public name: string = 'ironman';
-  public age: number = 45;
+  name = signal('Ironman');
+  age = signal(45);
 
-  get capitalizedName(): string {
-    return this.name.toUpperCase();
-  }
-  getHeroDescription(): string {
-    return `${this.name} - ${this.age}`;
-  }
+  heroDescription = computed(() => {
+    const description = `${this.name()} - ${this.age()}`;
+    return description;
+  });
 
-  changeHero(): void {
-    this.name = 'Spiderman';
-  }
+  capitalizedName = computed(() => this.name().toUpperCase());
 
-  changeAge(): void {
-    this.age = 25;
+  changeHero() {
+    this.name.set('Spiderman');
+    this.age.set(22);
   }
 
-  resetForm(): void {
-    this.name = 'ironman';
-    this.age = 45;
+  changeAge() {
+    this.age.set(60);
+  }
+
+  resetForm() {
+    this.name.set('Ironman');
+    this.age.set(45);
   }
 }
