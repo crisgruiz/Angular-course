@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { CounterComponent } from './counter/counter-page.component';
-import { HeroComponent } from './hero/hero.component';
+import { CounterComponent } from './pages/counter/counter-page.component';
+import { HeroComponent } from './pages/hero/hero.component';
 
 export const routes: Routes = [
   {
