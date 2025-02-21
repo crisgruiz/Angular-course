@@ -15,7 +15,12 @@
       <li>
         <span>{{ id + 1 }} - {{ character.name }}</span>
         <span> - </span>
-        <strong class="text-danger">{{ character.power }}</strong>
+        <!-- <strong [ngClass]="powerClasses()"></strong> -->
+        <strong
+          [class.text-danger]="character.power > 9000"
+          [class.text-primary]="character.power < 9000"
+          >{{ character.power }}s</strong
+        >
       </li>
       }
     </ul>
