@@ -8,11 +8,11 @@ interface Character {
 }
 
 @Component({
-  templateUrl: './dragonball.component.html',
-  styleUrl: './dragonball.component.css',
-  // imports: [NgClass],
+  templateUrl: './super-dragonball.component.html',
+  styleUrl: './super-dragonball.component.css',
+  selector: 'super-dragonball',
 })
-export class DragonballComponent {
+export class SuperDragonballComponent {
   name = signal('');
   power = signal(0);
 
@@ -22,21 +22,11 @@ export class DragonballComponent {
       name: 'Goku',
       power: 9001,
     },
-    // {
-    //   id: 2,
-    //   name: 'Vegeta',
-    //   power: 9000,
-    // },
-    // {
-    //   id: 3,
-    //   name: 'Piccolo',
-    //   power: 3000,
-    // },
-    // {
-    //   id: 4,
-    //   name: 'Yamcha',
-    //   power: 500,
-    // },
+    {
+      id: 2,
+      name: 'Vegeta',
+      power: 9000,
+    },
   ]);
 
   addCharacter() {
@@ -50,7 +40,6 @@ export class DragonballComponent {
       power: this.power(),
     };
 
-    // this.characters().push(newCharacter);
     this.characters.update((list) => [...list, newCharacter]);
     this.resetFields();
   }
@@ -58,10 +47,4 @@ export class DragonballComponent {
     this.name.set('');
     this.power.set(0);
   };
-
-  // powerClasses = computed(() => {
-  //   return {
-  //     'text-danger': true,
-  //   };
-  // });
 }
