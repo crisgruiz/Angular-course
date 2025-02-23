@@ -27,19 +27,8 @@ export class SuperDragonballComponent {
     },
   ]);
 
-  addCharacter() {
-    if (!this.name() || !this.power() || this.power() <= 0) {
-      return;
-    }
-
-    const newCharacter: Character = {
-      id: this.characters().length + 1,
-      name: this.name(),
-      power: this.power(),
-    };
-
+  addCharacter(newCharacter: Character) {
     this.characters.update((list) => [...list, newCharacter]);
-    this.resetFields();
   }
   resetFields = () => {
     this.name.set('');
