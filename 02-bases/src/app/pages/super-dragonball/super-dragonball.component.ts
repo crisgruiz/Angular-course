@@ -11,9 +11,6 @@ import { CharacterAddComponent } from '../../components/dragonball/character-add
   imports: [CharacterListComponent, CharacterAddComponent],
 })
 export class SuperDragonballComponent {
-  name = signal('');
-  power = signal(0);
-
   characters = signal<Character[]>([
     {
       id: 1,
@@ -30,8 +27,4 @@ export class SuperDragonballComponent {
   addCharacter(newCharacter: Character) {
     this.characters.update((list) => [...list, newCharacter]);
   }
-  resetFields = () => {
-    this.name.set('');
-    this.power.set(0);
-  };
 }
