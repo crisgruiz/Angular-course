@@ -1,10 +1,12 @@
 {
   "angular-schematics.schematicsDefaultOptions": {
     "angular-*": {
-      "externalTemplate": true
+      "externalTemplate": true,
+      "skipStyle": true
     },
     "angular-component": {
       "skipStyle": true
     }
-  }
+  },
+  "angular-schematics.angularDisableProjectPathCheck": true
 }
