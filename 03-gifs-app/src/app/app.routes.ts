@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
   {
-    path: 'dashboad',
+    path: 'dashboard',
     loadComponent: () => import('./gifs/pages/dashboard/dashboard.component'),
     children: [
       {
@@ -21,6 +21,6 @@ export const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'dashboad',
+    redirectTo: 'dashboard',
   },
 ];
